@@ -1,0 +1,49 @@
+//https://www.tutorialspoint.com/hibernate/hibernate_architecture.htm
+
+package com.prankster.demo_hib;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+      prankster prank=new prankster();
+      prank.setPid(102);
+      prank.setPname("yogesh");
+      prank.setPrankster("booyah!");
+      
+      //An instance of Configuration class allows specifying properties and mappings to applications.
+      
+      Configuration config=new Configuration().configure().addAnnotatedClass(prankster.class);
+      
+      //Configuration object is used to create a SessionFactory object which in turn configures Hibernate for the application 
+      //using the supplied configuration file and allows for a Session object to be instantiated
+      
+      //A ServiceRegistry, at its most basic, hosts and manages Services
+      ServiceRegistry sr = new StandardServiceRegistryBuilder().applySettings(conf.getProperties()).build();
+      
+      SessionFactory sf=config.buildSessionFactory();
+      
+      Session session=sf.openSession(); 
+      
+      // Transaction represents a unit of work with the database and most of the RDBMS supports transaction functionality.
+      
+      Transaction tx=session.beginTransaction();
+      
+     // A Session is used to get a physical connection with a database
+      session.save(prank);
+      
+      tx.commit();
+      }
+}

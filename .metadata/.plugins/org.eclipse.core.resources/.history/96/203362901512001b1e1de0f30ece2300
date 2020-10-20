@@ -1,0 +1,9 @@
+package com.prankster.demo_hib;
+
+public class prankname 
+{
+	private String pfname;
+	private String pmname;
+	private String plname;
+
+}

@@ -1,0 +1,27 @@
+package com.prankster.demo_hib;
+
+public class prankster 
+{
+
+	private int pid;
+	private String pname;
+	private String prankster;
+	public int getPid() {
+		return pid;
+	}
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
+	public String getPname() {
+		return pname;
+	}
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+	public String getPrankster() {
+		return prankster;
+	}
+	public void setPrankster(String prankster) {
+		this.prankster = prankster;
+	}
+}

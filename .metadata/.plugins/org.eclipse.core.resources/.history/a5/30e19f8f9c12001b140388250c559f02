@@ -1,0 +1,15 @@
+package com.prankster.demo_hib;
+
+import javax.persistence.Entity;
+
+@Entity
+public class address 
+{
+	@Id
+	private int aid;
+	private String city;
+	private prankname name;
+	
+	
+	
+}

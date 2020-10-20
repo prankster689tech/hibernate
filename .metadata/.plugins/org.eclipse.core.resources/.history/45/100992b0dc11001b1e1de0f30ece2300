@@ -1,0 +1,39 @@
+package com.prankster.demo_hib;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name="newname")
+public class prankster 
+{
+	@Id//creates id as primary key
+	private int pid;
+	
+	@Transient//skips creating a column in the db
+	private String pname;
+	
+	@Column(name="prankstername")
+	private String prankster;
+	public int getPid() {
+		return pid;
+	}
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
+	public String getPname() {
+		return pname;
+	}
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+	public String getPrankster() {
+		return prankster;
+	}
+	public void setPrankster(String prankster) {
+		this.prankster = prankster;
+	}
+}
